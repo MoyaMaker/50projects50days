@@ -1,0 +1,136 @@
+:root {
+  --blue: #3494e4;
+  --dark-blue: #144fc6;
+  --light-blue: #6ab3f8;
+
+  --percentage-water: 0%;
+}
+
+*,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: var(--blue);
+  color: white;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+
+  max-width: 56.25rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.water-glass {
+  margin: 2rem 0 3rem;
+}
+
+.glass {
+  height: 350px;
+  width: 150px;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 4px solid var(--dark-blue);
+  border-radius: 0 0 2.25rem 2.25rem;
+  background-color: white;
+  overflow: hidden;
+
+  color: var(--dark-blue);
+}
+
+.glass .empty,
+.glass .water {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  transition: height 0.2s ease;
+}
+
+.glass .empty {
+  height: calc(100% - var(--percentage-water));
+}
+
+.empty--title {
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.empty--description {
+  font-weight: 300;
+  font-size: 0.85rem;
+}
+
+.glass .water {
+  height: var(--percentage-water);
+
+  background-color: var(--light-blue);
+
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 1.125rem;
+}
+
+.mini-glass-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
+
+  margin-top: 1rem;
+}
+
+.mini-glass {
+  width: 3rem;
+  height: 6rem;
+
+  display: grid;
+  justify-items: center;
+  align-items: center;
+
+  padding: 0.5rem;
+  border: 4px solid var(--dark-blue);
+  border-radius: 0 0 0.85rem 0.85rem;
+  background-color: white;
+  color: var(--dark-blue);
+
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  transition-property: background, color;
+}
+
+.mini-glass:hover {
+  cursor: pointer;
+}
+
+.mini-glass.full {
+  background-color: var(--light-blue);
+  color: white;
+}
