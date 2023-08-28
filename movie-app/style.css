@@ -1,0 +1,154 @@
+:root {
+  --purple: #373b69;
+  --dark-purple: #22254b;
+  --lavender: #7378c5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: var(--dark-purple);
+
+  scrollbar-gutter: stable both-edges;
+}
+
+img {
+  max-width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: row-reverse;
+
+  background-color: var(--purple);
+  padding: 0.5rem;
+}
+
+.search-input {
+  border: 2px solid var(--dark-purple);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  outline: none;
+
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+
+.search-input::placeholder {
+  color: var(--lavender);
+  font-weight: inherit;
+}
+
+.search-input:focus {
+  background-color: var(--dark-purple);
+}
+
+.container {
+  max-width: 102.5rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.movies-container {
+  display: grid;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 48rem) {
+  .movies-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .movies-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.movie {
+  position: relative;
+
+  border-radius: 0.5rem;
+  background-color: var(--purple);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+
+  color: white;
+}
+
+.movie .movie-poster img {
+  display: flex;
+}
+
+.movie .movie-poster figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem;
+
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.movie .movie-rating {
+  background-color: var(--dark-purple);
+  padding: 0.25rem 0.4rem;
+  border-radius: 0.25rem;
+
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.movie-rating.green {
+  color: lightgreen;
+}
+.movie-rating.orange {
+  color: orange;
+}
+.movie-rating.red {
+  color: red;
+}
+
+.movie .movie-overview {
+  position: absolute;
+  bottom: 0;
+
+  transform: translateY(100%);
+
+  background-color: white;
+  padding: 1.25rem;
+
+  color: black;
+  font-weight: normal;
+  font-size: 1rem;
+
+  transition: transform 0.4s ease;
+}
+
+.movie:hover .movie-overview {
+  transform: translateY(0);
+}
+
+.movie .movie-overview__title {
+  margin: 1rem 0;
+
+  font-weight: 600;
+  font-size: 1.25rem;
+}
