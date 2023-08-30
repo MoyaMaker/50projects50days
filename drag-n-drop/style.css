@@ -1,0 +1,53 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+
+  display: grid;
+  justify-items: center;
+  align-items: center;
+
+  background-color: #4682b4;
+}
+
+.container {
+  max-width: 64rem;
+
+  display: flex;
+  gap: 1rem;
+
+  margin: 0 auto;
+}
+
+.drop-box {
+  width: 10rem;
+  height: 10rem;
+
+  border: 3px solid black;
+  background-color: white;
+}
+
+.drop-box.hover {
+  border-style: dashed;
+  border-color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+
+  background-image: url("https://source.unsplash.com/random/150x150");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hold {
+  border: 5px solid #ccc;
+}
